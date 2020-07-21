@@ -13,12 +13,8 @@ const App = () =>{
     )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(<App  {user}/>, document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user)=>{
-    if(user){
-        console.log('logged')
-    }else{
-        console.log('logged out')
-    }
+    ReactDOM.render(<App auth= {user}/>, document.getElementById('root'));
 })
