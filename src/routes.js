@@ -5,7 +5,9 @@ import Header from './components/Header/header';
 import Uncontrolled from './components/uncontrolled';
 import Controlled from './components/controlled';
 import User from './components/user';
-import LogIn from './components/logIn'
+import LogIn from './components/logIn';
+import Dashboard from './components/dashboard';
+
 
 const Routes = () => {
     return (
@@ -16,6 +18,7 @@ const Routes = () => {
                 <Route path="/controlled" exact component={Controlled} />
                 <Route path="/user" exact component={User} />
                 <Route path="/login" exact component={LogIn} />
+                <Route path="/dash" exact component = {Dashboard}></Route>
             </Switch>
            
         </div>
