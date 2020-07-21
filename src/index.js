@@ -4,17 +4,27 @@ import Routes from './routes';
 import { BrowserRouter } from 'react-router-dom';
 import { firebase } from './firebase';
 
-const App = () =>{
+const App = (props) =>{
+    // console.log(props)
+    // alert(props.auth.displayName)
     
     return(
         <BrowserRouter>
-            <Routes/>
+            <Routes {...props}/>
         </BrowserRouter>
     )
 }
 
-// ReactDOM.render(<App  {user}/>, document.getElementById('root'));
+
+
 
 firebase.auth().onAuthStateChanged((user)=>{
-    ReactDOM.render(<App auth= {user}/>, document.getElementById('root'));
+    // if(user){
+    //     console.log('logged')
+    // }else{
+    //     console.log('logged out')
+    // }
+
+    ReactDOM.render(<App auth={user} />, document.getElementById('root'))
+
 })
